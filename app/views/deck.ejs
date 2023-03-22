@@ -1,0 +1,19 @@
+<%- include('./partials/header') %>
+
+<h1>Mon deck</h1>
+
+<div class="cardsContainer">
+  <% cards.forEach( (card) => { %>
+
+    <div class="card">
+      <a href="card\<%= card.id %>">
+        <img src="/visuals/<%= card.visual_name %>" alt="<%= card.name %> illustration">
+        <p class="cardName"><%= card.name %></p>
+      </a>
+      <a class="link--addCard" title="Retirer du deck" href="/deck/remove/<%= card.id %>">[ - ]</a>
+    </div>
+  <% }) %>
+</div>
+
+
+<%- include('./partials/footer') %>
